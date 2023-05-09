@@ -1,0 +1,62 @@
+.header{
+    padding: 1rem 0;
+    box-shadow: 0 .1rem 0 $clr-primary;
+    &__wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include mediaQuery($mobile){
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .branding{
+
+        }
+        .header__nav{
+            ul{
+                display: flex;
+                align-items: center;
+                gap: 7rem;
+                @include mediaQuery($mobile){
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0 auto;
+                    margin-top: 3rem;
+                    margin-left: -2rem;
+                }
+                @include mediaQuery($tablet){
+                    margin: 0 5rem;
+                }
+                li{
+                    position: relative;
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        width: 9rem;
+                        height: .1rem;
+                        background-color: transparent;
+                        left: -1.3rem;
+                        bottom: -1rem;
+                        z-index: -1;
+                        transition: .3s ease-in-out;
+                    }
+                    &:hover:after{
+                        height: 4rem;
+                        background-color: $clr-primary;
+                    }
+                    a{
+                        align-self: center;
+                        transition: .3s ease-in-out;
+                        font-weight: 300;
+                    }
+                    &:hover a{
+                        color: $clr-light;
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+    }
+}
