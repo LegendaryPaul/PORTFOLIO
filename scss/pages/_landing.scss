@@ -1,66 +1,17 @@
 
-.horizontal{
-    display: grid;
-    grid-auto-flow: column;
-    overflow-x: scroll;
-    grid-template-columns: repeat(5, 1fr); 
-    
-    height: calc(100vh - 100px);
-}
-.arrow_butt{
-    position: absolute;
-    right: 25rem;
-    &:hover:before{
-        opacity: 1;
-    }
-    &::before{
-        content: 'Click to go other section!';
-        opacity: 0;
-        margin: 2rem;
-        transition: .3s ease-in-out;
-    }
-    .arrow{
-        background-color: $clr-primary;
-        display: inline;
-        padding: 3rem;
-        border-radius: 50%;
-        display: inline-block;
-        width: 7rem;
-        height: 7rem;
-        overflow: hidden;
-        position: relative;
-        .arrow_inner{
-            width: 2rem;
-            overflow: hidden;
-            display: flex;
-            position: absolute;
-            left: 35%;
-            top: 38%;
-        }
-        &:hover .arrow_inner a:last-child{
-            // background-color: $clr-secondary;
-            transform: translateX(-2rem);
-        }
-        &:hover .arrow_inner a:first-child{
-            // background-color: $clr-secondary;
-            transform: translateX(-5rem);
-        }
-        a{
-            color: $clr-light;
-            font-weight: 500;
-            transition: .3s ease-in-out;
-            i{
-                font-size: 2rem;
-            }
-        }
-    }
-}
+// .horizontal{
+//     display: grid;
+//     grid-auto-flow: column;
+//     overflow-x: scroll;
+//     grid-template-columns: repeat(5, 1fr);
+//     height: calc(100vh - 100px);
+// }
+
 .banner{
-    position: relative;
     width: 100vw;
     padding: 5rem 0;
     width: 100vw;
-    height: calc(100vh - 200px);
+    // height: calc(100vh - 200px);
     .banner__text{
         display: flex;
         flex-direction: column;
@@ -166,10 +117,6 @@
             .whats__item__content{
                 
                 margin-top: 3rem;
-                display: flex;
-                gap: 5rem;
-                align-items: center;
-                justify-content: space-between;
                 .whats__text{
                     h4{
                         font-size: 2rem;
@@ -208,19 +155,22 @@
                 }
                 .whats__img{
                     margin-top: 3rem;
-                    .img__cont{
-                        .img__item{
-                            display: flex;
-                            & img:last-child{
-                                transform: translateY(10rem) translateX(-20rem);
+                    .img__item{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 5rem;
+                        img{
+                            width: 600px;
+                            height: 400px;
+                            box-shadow: -2rem 2rem 0 $clr-primary;
+                            transition: .3s ease-in-out;
+                            &:hover{
+                                box-shadow: unset;
                             }
                         }
                     }
-                    img{
-                        width: 600px;
-                        height: 400px;
-                        box-shadow: -2rem 2rem 0 $clr-primary;
-                    }
+                    
                 }
             }
         }
@@ -330,7 +280,6 @@
 .experience{
     padding: 5rem 0;
     width: 100vw;
-    margin-left: -20rem;
     position: relative;
     &__wrapper{
         .experience__title{
@@ -354,16 +303,16 @@
             }
         }
         .experience__card__container{
-            @include grid(2, 11rem);
+            @include grid(1, 2rem);
             
             .experience__card{
                 border: 1px solid $clr-primary;
-                width: 70rem;
+                width: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 padding: 4rem;
-                box-shadow: 2rem 2rem 0 $clr-primary;
+                box-shadow: -2rem 2rem 0 $clr-primary;
                 &:hover .experience__card__head h4::after{
                     height: 4rem;
                     background-color: $clr-primary;
@@ -372,7 +321,7 @@
                     color: $clr-light;
                 }
                 &:nth-child(even){
-                    transform: translateY(12rem);
+                    // transform: translateY(12rem);
                 }
                 .experience__card__head{
                     display: flex;
@@ -416,6 +365,7 @@
 .client{
     padding: 5rem 0;
     width: 100vw;
+    position: relative;
     &__wrapper{
         .client__title{
             margin-bottom: 5rem;
@@ -440,14 +390,14 @@
 
         .client__slider{
             border: 1px solid $clr-primary;
-            padding: 5rem;
-            border-radius: 3rem;
             .client__card{
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 margin: 0 auto;
+                padding: 5rem;
+                border-radius: 3rem;
                 &:hover .client__img img{
                     transform: translateY(-1rem);
                     box-shadow: 1.5rem 2rem 0 $clr-primary;
@@ -501,6 +451,183 @@
         }
     }
 }
+
+
+.contact{
+    padding: 5rem 0;
+    margin-top: 5rem;
+    &__title{
+        margin-bottom: 5rem;
+        h3{
+            font-size: 3rem;
+                color: $clr-primary;
+                font-weight: 600;
+                font-style: italic;
+                position: relative;
+                display: inline;
+                &::after{
+                    content: '';
+                    background-color: $clr-primary;
+                    width: 7rem;
+                    height: .2rem;
+                    position: absolute;
+                    top: 50%;
+                    right: -8rem;
+                }
+        }
+    }
+    &__wrapper{
+        // @include grid(2, 10rem);
+        display: flex;
+        justify-content: space-between;
+        // align-items: center;
+        gap: 5rem;
+        .form__contact{
+            width: 100%;
+            form{
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                width: 100%;
+                .form__item{
+                    position: relative;
+                    input{
+                        border: 1px solid $clr-primary;
+                        width: 100%;
+                        height: 5rem;
+                        transition: .3s ease-in-out;
+                        padding: 1rem;
+                        &:focus + span{
+                            top: -2rem;
+                            color: $clr-primary;
+                            font-weight: 500;
+                        }
+                        &:focus{
+                            box-shadow: 1rem 1rem 0 $clr-primary;
+                        }
+                    }
+                    textarea{
+                        border: 1px solid $clr-primary;
+                        width: 100%;
+                        transition: .3s ease-in-out;
+                        padding: 1rem;
+                        &:focus + span{
+                            top: -2rem;
+                            color: $clr-primary;
+                            font-weight: 500;
+                        }
+                        &:focus{
+                            box-shadow: 1rem 1rem 0 $clr-primary;
+                        }
+                    }
+                    span{  
+                        position: absolute;
+                        left: 1rem;
+                        top: 1rem;
+                        transition: .3s ease-in-out;
+                        background-color: #fff;
+                        padding: .3rem;
+                    }
+                }
+                .form__btn{
+                    text-align: right;
+                    input{
+                        color: $clr-light;
+                        display: inline;
+                        background-color: $clr-primary;
+                        padding: 1rem 2rem;
+                        border-radius: 3rem;
+                        border: 1px solid transparent;
+                        &:hover{
+                            background-color: transparent;
+                            border: 1px solid $clr-primary;
+                            color: $clr-primary;
+                        }
+                    }
+                }
+            }
+        }
+        .form__details{
+            width: 50rem;
+            .details__card{
+                border: 1px solid $clr-primary;
+                display: inline-block;
+                padding: 3rem;
+                box-shadow: 2rem 2rem 0 $clr-primary;
+                .details__title{
+                    display: flex;
+                    flex-direction: column;
+                    height: 4rem;
+                    overflow: hidden;
+                    &:hover h3:first-child{
+                        transform: translateY(-4rem);
+                    }
+                    &:hover h3:last-child{
+                        transform: translateY(-4rem);
+                    }
+                    h3{
+                        font-size: 3rem;
+                        font-weight: 500;
+                        letter-spacing: 2px;
+                        transition: .3s ease-in-out;
+                        
+                    }
+                }
+                ul{
+                    margin-top: 3rem;
+                    li{
+                        margin-bottom: 2rem;
+                        &:hover .title span:first-child{
+                            transform: translateY(-3rem);
+                        }
+                        &:hover .title span:last-child{
+                            transform: translateY(-2rem);
+                        }
+                        &:hover i{
+                            color: $clr-secondary;
+                        }
+                        a{
+                            display: flex;
+                            align-items: center;
+                            height: 3rem;
+                            overflow: hidden;
+                            i{
+                                font-size: 3rem;
+                                padding: 1rem;
+                                margin-right: 2rem;
+                            }
+                            .title{
+                                display: flex;
+                                flex-direction: column;
+                                margin-top: 2rem;
+                                span{
+                                    transition: .3s ease-in-out;
+                                    text-decoration-line: underline;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes switch {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-5rem);
+    }
+    55%{
+        transform: translateY(-5rem);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
 @keyframes bouncy {
     0%{
         right: -7rem;

@@ -7,5 +7,6 @@ var slider = tns({
   slideBy: 'page',
   autoplay: true,
   controlsText: ['<i class="fa-solid fa-angles-left"></i>', '<i class="fa-solid fa-angles-right"></i>'],
-  mouseDrag: true 
+  mouseDrag: true,
+  gutter: 5,
 });

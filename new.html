@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="./scss/main.css">
+</head>
+<body>
+<section class="client" id="client">
+    <div class="container">
+        <div class="client__wrapper">
+            <div class="client__title">
+                <h3>What people say about me</h3>
+            </div>
+            <div class="client__slider">
+                <div class="client__card">
+                    <div class="client__img">
+                        <img src="./img/client1.png" alt="">
+                    </div>
+                    <div class="client__desc">
+                        <h2>Random A. Person</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto non perferendis dignissimos sapiente veniam recusandae rem aperiam ad quod natus quasi eaque illo esse a, delectus cum itaque, dolorum odio?</p>
+                    </div>
+                </div>
+                <div class="client__card">
+                    <div class="client__img">
+                        <img src="./img/client1.png" alt="">
+                    </div>
+                    <div class="client__desc">
+                        <h2>Random A. Person</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto non perferendis dignissimos sapiente veniam recusandae rem aperiam ad quod natus quasi eaque illo esse a, delectus cum itaque, dolorum odio?</p>
+                    </div>
+                </div>
+                <div class="client__card">
+                    <div class="client__img">
+                        <img src="./img/client1.png" alt="">
+                    </div>
+                    <div class="client__desc">
+                        <h2>Random A. Person</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto non perferendis dignissimos sapiente veniam recusandae rem aperiam ad quod natus quasi eaque illo esse a, delectus cum itaque, dolorum odio?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    var slider = tns({
+    container: '.client__slider',
+    items: 3,
+    slideBy: 'page',
+    autoplay: true,
+    controlsText: ['<i class="fa-solid fa-angles-left"></i>', '<i class="fa-solid fa-angles-right"></i>'],
+    mouseDrag: true 
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script src="./javascript/script.js"></script>
+</body>
+</html>
